@@ -7,9 +7,9 @@ This is a temporary script file.
 import streamlit as st
 #Summary Package
 from gensim.summarization import summarize
-from sumy.parsers.plaintext import PlaintextParser
-from sumy.nlp.tokenizers import Tokenizer
-from sumy.summarizers.lex_rank import LexRankSummarizer
+#from sumy.parsers.plaintext import PlaintextParser
+#from sumy.nlp.tokenizers import Tokenizer
+#from sumy.summarizers.lex_rank import LexRankSummarizer
 import spacy
 import en_core_web_sm
 nlp = en_core_web_sm.load()
@@ -57,7 +57,7 @@ def main():
             if summary_choice == 'Gensim':
                 summary_result = summarize(raw_text)
             elif summary_choice == 'Sumy Lex Rank':
-                summary_result = sumy_summarization(raw_text)            
+                summary_result = summarize(raw_text)            
             st.write(summary_result)
     if choice == 'NER Checker':
         st.subheader("Entity Recognition")
@@ -85,7 +85,7 @@ def main():
         if st.button("Summarize"):
             if url != "Type Here ...":
                 result = get_text(url)
-                summary_result = sumy_summarization(result)
+                summary_result = summarize(raw_text)
                 st.write(summary_result)
     
     
