@@ -85,7 +85,7 @@ def main():
         if st.button("Summarize"):
             if url != "Type Here ...":
                 result = get_text(url)
-                summary_result = summarize(raw_text)
+                summary_result = summarize(result)
                 st.write(summary_result)
     
     
